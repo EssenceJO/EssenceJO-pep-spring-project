@@ -95,6 +95,13 @@ public ResponseEntity<?> updateMessage(@PathVariable int messageId, @RequestBody
     }
 }
 
+@GetMapping("/accounts/{accountId}/messages")
+public ResponseEntity<List<Message>> getMessagesByUser(@PathVariable int accountId) {
+    List<Message> messages = messageService.getMessagesByAccountId(accountId);
+    return ResponseEntity.ok(messages); // returns empty list if none found
+}
+
+
 
 }
 

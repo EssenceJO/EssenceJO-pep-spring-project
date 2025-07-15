@@ -60,6 +60,11 @@ public class MessageService {
         return messageRepository.findByPostedBy(postedBy);
     }
 
+    public List<Message> getMessagesByAccountId(int accountId) {
+    return messageRepository.findByPostedBy(accountId);
+}
+
+
     
 
     
